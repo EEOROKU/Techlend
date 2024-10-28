@@ -13,13 +13,18 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
     $email = $_POST['email'];
+    $time = $_POST['time'];
+    $location = $_POST['location'];
 
-    $sql = "INSERT INTO Newsletter (email) VALUES ('$email')";
+    $sql = "INSERT INTO pickup (name, email, time, location) VALUES ('$name', '$email', '$time', '$location')";
+
     $url = "https://lend.deets.technology/";
     $font = "https://use.fontawesome.com/releases/v5.15.4/css/all.css";
     if ($conn->query($sql) === TRUE) {
-        echo "<html>
+        echo "
+        <html>
         <head>
         <meta charset=\"UTF-8\">
         <title>Tech lend</title>
@@ -45,12 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <body>
             <div class=\"center-content\">
                 <a href=\"index.html\"><img src=\"img/logo_lend2.png\" width=\"500px\" height=\"500px\" class=\"logo\" alt=\"\"></a>
-                <h1>You have been added to the Newsletter successfully!!!</h1>
+                <h1>Rented successfully!!!</h1>
                 <p><a href='$url'>HOMEPAGE</a></p>
-                <p>We will keep giving you updates about our latest computers and special offers!!!</p>
+                <p>We will keep in touch!</p>
             </div>
         </body>
-        </html>";
+        </html>
+        ";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

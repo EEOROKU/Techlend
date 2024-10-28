@@ -15,3 +15,7 @@ function closeNav() {
     document.getElementById("mySidenav").style.transform = "translateX(100%)";
 }
 
+function handleSubmit(event) {
+    event.preventDefault();
+    localStorage.setItem('formSubmitted', 'true');
+}

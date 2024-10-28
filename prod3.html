@@ -53,7 +53,7 @@
             <div class="single-pro-details">
                 <h6 id="mob2">Home / Laptops / DELL</h6>
                 <h4 id="mob2">latitude E5570</h4>
-                <h2>$30 /Bi-weekly</h2>
+                <h2>$5/day</h2>
                 <p>Select rental period</p>
                 <div class="radio-inputs">
                     <label class="radio">
@@ -71,10 +71,8 @@
                     </label>
                 </div>
 
-                <script async src="https://js.stripe.com/v3/buy-button.js">
-                </script>
                 <div id="pay">
-                    <stripe-buy-button buy-button-id="buy_btn_1Phd6LBDNasnup13dU2ORHrN" publishable-key="pk_test_51PUadwBDNasnup13aMj720QZhefpNp45CbEKwG1zybRPt1rIm3ohkBMZEN8PGlYKnEV4c0o7ZfGzWbDik3Zncyu200M4pWsHPM" > </stripe-buy-button>                    
+                    <button id="addToCart" class="normal" onclick="window.location.href='Products/prod3/t&c1.html';">Order now</button>
                 </div>
                 <script>
                     // Get the radio buttons
@@ -92,48 +90,36 @@
                             switch (this.nextElementSibling.textContent) {
                                 case 'Daily':
                                     price.textContent = '$5/day';
-                                    buy.innerHTML = 
-                                    '  <stripe-buy-button buy-button-id="buy_btn_1Phd6LBDNasnup13dU2ORHrN" publishable-key="pk_test_51PUadwBDNasnup13aMj720QZhefpNp45CbEKwG1zybRPt1rIm3ohkBMZEN8PGlYKnEV4c0o7ZfGzWbDik3Zncyu200M4pWsHPM" > </stripe-buy-button>';
+                                    buy.innerHTML ='<button id="addToCart" class="normal" onclick="window.location.href=\'Products/prod3/t&c1.html\';">Order now</button>';
                                     break;
                                 case 'Weekly':
                                     price.textContent = '$17/week';
-                                    buy.innerHTML = 
-                                    '  <stripe-buy-button buy-button-id="buy_btn_1PhdxDBDNasnup13hZFS7UGx" publishable-key="pk_test_51PUadwBDNasnup13aMj720QZhefpNp45CbEKwG1zybRPt1rIm3ohkBMZEN8PGlYKnEV4c0o7ZfGzWbDik3Zncyu200M4pWsHPM" > </stripe-buy-button>';
+                                    buy.innerHTML ='<button id="addToCart" class="normal" onclick="window.location.href=\'Products/prod3/t&c2.html\';">Order now</button>';
                                     break;
                                 case 'Bi-weekly':
                                     price.textContent = '$30/Bi-weekly';
-                                    buy.innerHTML = 
-                                    '<stripe-buy-button buy-button-id="buy_btn_1Phe0SBDNasnup13uS7duweD" publishable-key="pk_test_51PUadwBDNasnup13aMj720QZhefpNp45CbEKwG1zybRPt1rIm3ohkBMZEN8PGlYKnEV4c0o7ZfGzWbDik3Zncyu200M4pWsHPM" > </stripe-buy-button>';
+                                    buy.innerHTML ='<button id="addToCart" class="normal" onclick="window.location.href=\'Products/prod3/t&c3.html\';">Order now</button>';
                                     break;
                                 default:
                                     price.textContent = '$5/Bi-weekly';
-                                    buy.innerHTML = 
-                                    '  <stripe-buy-button buy-button-id="buy_btn_1Phd6LBDNasnup13dU2ORHrN" publishable-key="pk_test_51PUadwBDNasnup13aMj720QZhefpNp45CbEKwG1zybRPt1rIm3ohkBMZEN8PGlYKnEV4c0o7ZfGzWbDik3Zncyu200M4pWsHPM" > </stripe-buy-button>';
+                                    buy.innerHTML ='<button id="addToCart" class="normal" onclick="window.location.href=\'Products/prod3/t&c1.html\';">Order now</button>';
                             }
                         });
                     });
                 </script>
                 <h4>Product Details</h4>
                 <span>
-                    MODEL - latitude E5570, 
-                    
-                    MEMORY - 16GB, 
-                    
-                    DISPLAY - 15.6 inches (1920x1080), 
-                    
-                    STORAGE - 250GB SSD, 
-                    
-                    GRAPHICS - AMD Radeon (TM) R7 M360, Intel(R) HD Graphics 520, 
-                    
-                    PROCESSOR - Intel(R) Core(TM) i7-6600U CPU @2.60GHz 2.80GHz, 
-                    
-                    DIMENSIONS - 34.04 x 23.76 x 1.15 cm • 1.51 kg, 
-                    
-                    OPERATING SYSTEM - Windows,
-                    
-                    SYSTEM TYPE - 64-bit operating system,x64-based processor,
-                    
-                    KEYBOARD LANGUAGE - English</span>
+                    Model: Latitude E5570,
+                    Memory: 16GB,
+                    Display: 15.6 inches (1920x1080),
+                    Storage: 250GB SSD,
+                    Graphics: AMD Radeon™ R7 M360, Intel® HD Graphics 520,
+                    Processor: Intel® Core™ i7-6600U CPU @ 2.60GHz 2.80GHz,
+                    Dimensions: 34.04 x 23.76 x 1.15 cm • 1.51 kg,
+                    Operating System: Windows,
+                    System Type: 64-bit operating system, x64-based processor,
+                    Keyboard Language: English
+                </span>
             </div>
     
         </section>
@@ -196,13 +182,13 @@
                     </div>
                     <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
                 </div>
-                <div class="pro" onclick="window.location.href='prod3.html';">
-                    <img src="img/laptop/Latitude E5570/l15.jpg" alt="">
+                <div class="pro" onclick="window.location.href='prod6.html';">
+                    <img src="img/laptop/Elitebook/3967678b-5f5b-4a23-8d96-bab21662328c.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="">
     
                     <div class="des">
-                        <span>DELL</span>
-                        <h5>latitude E5570</h5>
-                        <p>15 inch display, Intel Core i7...</p>
+                        <span>HP</span>
+                        <h5>EliteBook</h5>
+                        <p>15 inch display, keyboard - english</p>
                         <div class="price"><h4>$30</h4><p> /bi-weekly</p></div>
                     </div>
                     <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
@@ -258,7 +244,7 @@
                 <h4>Contact</h4>
                 <p><strong>Address: </strong>Charlottetown, PE, Canada</p>
                 <P><strong>Phone:</strong> (902)3882269</P>
-                <p><strong>Hours: </strong>00:00 - 23:59, Sat - Sun</p>
+                <p><strong>Hours: </strong>08:00 - 20:59, Mon - Sun</p>
                 <div class="follow">
                     <h4>Follow us</h4>
                     <div class="icon">
@@ -274,8 +260,8 @@
                 <h4>About</h4>
                 <a href="#">About us</a>
                 <a href="#">Delivery Information</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms & Conditions</a>
+                <a href="PrivacyPolicy.html">Privacy Policy</a>
+                <a href="Terms&services.html">Terms & Conditions</a>
                 <a href="#">Contact us</a>
             </div>
             <div class="col">
@@ -291,7 +277,7 @@
                 <img src="img/pay/pay.png" alt="">
             </div>
             <div class="copyright">
-                <p>DEETS</p>
+                <p><a href="https://deets.technology/">DEETS</a></p>
             </div>
         </footer>
         <script>

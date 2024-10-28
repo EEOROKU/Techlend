@@ -88,6 +88,7 @@ body {
 }
 #navbar{
     display: flex;
+    flex-direction:row;
     align-items: center;
 
 }
@@ -112,16 +113,6 @@ body {
 #navbar li a.lg{
     color: red;
     
-}
-#navbar li a.active::after,
-#navbar li a:hover::after{
-    content: "";
-    width: 30%;
-    height: 2px;
-    background: red;
-    position: absolute;
-    bottom: -4px;
-    left: 20px;
 }
 #mobile{
     display: none;
@@ -306,7 +297,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding-top: 20px;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
 }
 #product1 .pro{
     width: 23%;
@@ -332,11 +323,11 @@ body {
     padding: 10px 0;
 }
 #product1 .pro .des span{
-    color: #606063;
+    color: #8b8b8d;
     font-size: 12px;
 }
 #product1 .pro .des p{
-    color: #606063;
+    color: #a8a8a9;
     font-size: 12px;
     padding-bottom: 0%;
 }
@@ -682,12 +673,11 @@ footer .copyright{
     background: red;
     color: #fff;
     border: 1px solid red ;
-    padding: 10px 80px 10px 80px;
+    padding: 10px 100px 10px 100px;
     cursor: pointer;
     font-weight: 700;
     font-size: 15px;
-    border-radius: 25px;
-    width: 100%;
+    border-radius: 10px;
 }
 #pro-details .single-pro-details span{
     line-height: 25px;
@@ -858,6 +848,7 @@ footer .copyright{
     border-radius: 20px;
 }
 #about-started{
+    padding-top: 50px;
     text-align: center;
 }
 #about-started h4{
@@ -1075,12 +1066,114 @@ footer .copyright{
     font-size: 13px;
 }
 
+/* From Uiverse.io by Yaya12085 */ 
+.radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    background-color: rgb(28, 28, 28);
+    box-sizing: border-box;
+    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+    padding: 0.25rem;
+    width: 300px;
+    font-size: 14px;
+  }
+  
+  .radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  
+  .radio-inputs .radio input {
+    display: none;
+  }
+  
+  .radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    padding: .5rem 0;
+    color: rgba(51, 65, 85, 1);
+    transition: all .15s ease-in-out;
+  }
+  
+  .radio-inputs .radio input:checked + .name {
+    background-color: #d60000;
+    font-weight: 900;
+  }
 @media screen and (orientation: portrait){
+    /* From Uiverse.io by Yaya12085 */ 
+    .radio-inputs {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0.5rem;
+        background-color: rgb(28, 28, 28);
+        box-sizing: border-box;
+        box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+        padding: 0.25rem;
+        width: 70%;
+        font-size: 14px;
+    }
+    #navbar{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+    
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+      
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+      
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+      
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      
+      #main {
+        transition: margin-left .5s;
+        padding: 16px;
+      }
+      
+      #mobile {
+        display: block;
+    }
+
     #about-index{
         background-size: 100% 100%;
-        display:inline-flex;
+        display:flex;
         align-items: center;
-        padding-right:9%;
+        padding-right:0%;
     }
     #page-header{
         background-image: url(img/hero.png);
@@ -1158,46 +1251,57 @@ footer .copyright{
     #pro-details2 {
         display: flex;
     }
+    #product1 .pro .des span{
+        color: #aaaaad;
+        font-size: 13px;
+    }
+    #product1 .pro .des p{
+        color: #a8a8a9;
+        font-size: 13px;
+        padding-bottom: 0%;
+    }
+    .price{
+        display: block;
+        align-items: center;
+    }
+    .price p{
+        padding-top: 10px;
+    }
+    #product1 .pro-container{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        flex-wrap:wrap;
+    }
+    #product1 .pro{
+        width: 100%;
+        min-width: 250px;
+        padding: 10px 12px;
+        border: 1px solid #fff;
+        border-radius: 25px;
+        cursor: pointer;
+        box-shadow: 0px 0px 0px rgba(252, 252, 252, 0.02);
+        margin: 15px 0;
+        transition: 0.2s ease;
+        position: relative;
+    }
+    #product1 .pro .cart{
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        border-radius: 50px;
+        background-color: #f6e8f0;
+        font-weight: 600;
+        color: red;
+        border: 1px solid #e7cce4;
+        position: absolute;
+        bottom: 20px;
+        right: 10px;
+    }
+    .section-p1 {
+        padding:40px 20px;
+    }
 }
-/* From Uiverse.io by Yaya12085 */ 
-.radio-inputs {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 0.5rem;
-    background-color: rgb(28, 28, 28);
-    box-sizing: border-box;
-    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
-    padding: 0.25rem;
-    width: 300px;
-    font-size: 14px;
-  }
-  
-  .radio-inputs .radio {
-    flex: 1 1 auto;
-    text-align: center;
-  }
-  
-  .radio-inputs .radio input {
-    display: none;
-  }
-  
-  .radio-inputs .radio .name {
-    display: flex;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.5rem;
-    border: none;
-    padding: .5rem 0;
-    color: rgba(51, 65, 85, 1);
-    transition: all .15s ease-in-out;
-  }
-  
-  .radio-inputs .radio input:checked + .name {
-    background-color: #d60000;
-    font-weight: 600;
-  }
 
   #pay{
     padding-top: 10px;
@@ -1208,4 +1312,23 @@ footer .copyright{
     flex-wrap: wrap; 
   }
 
-  
+  .pricebar {
+    overflow: hidden;
+    background-color: #000;
+    position:fixed; /* Set the navbar to fixed position */
+    bottom: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 40px;
+    padding-top: 20px;
+    border-top: 1px solid gray;
+    z-index: 1000;
+  }
+  .pricebar button{
+    color: white;
+    background-color: red;
+    width: 200px;
+  }
