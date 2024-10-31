@@ -31,6 +31,13 @@
                 <h4>Portege</h4>
             </div>
         </section>
+        
+        <div class="pricebar" id="mob">
+            <h2>$5/day</h2>
+            <div>
+                <button id="addToCart" class="normal" onclick="window.location.href='Products/prod5/t&c1.html';">Order now</button>
+            </div>
+        </div>
         <section id="pro-details" class="section-p1">
             <div class="single-pro-image">
                 <img src="img/laptop/Toshiba/laptop-reconditionne-en-vente-Toshiba-PortageZ30.png" width="100%" id="MainImg" alt="">
@@ -53,7 +60,7 @@
             <div class="single-pro-details">
                 <h6 id="mob2">Home / Laptops / Toshiba</h6>
                 <h4 id="mob2">Portege</h4>
-                <h2>$5 /Day</h2>
+                <h2 id="mob2">$5 /Day</h2>
                 <p>Select rental period</p>
 
                 <div class="radio-inputs">
@@ -80,10 +87,11 @@
                     var radios = document.querySelectorAll('input[name="radio"]');
                     
                     // Get the price element
-                    var price = document.querySelector('h2');
-                
+                    var price = document.querySelector('.single-pro-details h2');
+                    const priceElement = document.querySelector('.pricebar h2');
+
                     var buy = document.getElementById('pay');
-                
+                    const buyElement = document.querySelector('.pricebar div');
                     // Add an event listener for the change event on the radio buttons
                     radios.forEach(function(radio) {
                         radio.addEventListener('change', function() {
@@ -91,20 +99,27 @@
                             switch (this.nextElementSibling.textContent) {
                                 case 'Daily':
                                     price.textContent = '$5/day';
+                                    priceElement.textContent = '$5/day';
                                     buy.innerHTML ='<button id="addToCart" class="normal" onclick="window.location.href=\'Products/prod5/t&c1.html\';">Order now</button>';
+                                    buyElement.innerHTML ='<button id="addToCart" class="normal" onclick="window.location.href=\'Products/prod5/t&c1.html\';">Order now</button>';
                                     break;
                                 case 'Weekly':
                                     price.textContent = '$17/week';
+                                    priceElement.textContent = '$17/week';
                                     buy.innerHTML ='<button id="addToCart" class="normal" onclick="window.location.href=\'Products/prod5/t&c2.html\';">Order now</button>';
+                                    buyElement.innerHTML ='<button id="addToCart" class="normal" onclick="window.location.href=\'Products/prod5/t&c2.html\';">Order now</button>';
                                     break;
                                 case 'Bi-weekly':
                                     price.textContent = '$30/Bi-weekly';
-                                    buy.innerHTML ='<button id="addToCart" class="normal" onclick="window.location.href=\'Products/prod5/t&c3.html\';">Order now</button>';
+                                    priceElement.textContent = '$30/Bi-weekly';
+                                    buyElement.innerHTML ='<button id="addToCart" class="normal" onclick="window.location.href=\'Products/prod5/t&c3.html\';">Order now</button>';
                                     break;
                                 default:
                                     price.textContent = '$5/Bi-weekly';
+                                    priceElement.textContent = '$5/day';
                                     buy.innerHTML ='<button id="addToCart" class="normal" onclick="window.location.href=\'Products/prod5/t&c1.html\';">Order now</button>';
-                            }
+                                    buy.innerHTML ='<button id="addToCart" class="normal" onclick="window.location.href=\'Products/prod5/t&c1.html\';">Order now</button>';
+                                }
                         });
                     });
                 </script>

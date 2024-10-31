@@ -693,6 +693,7 @@ footer .copyright{
 }
 #pro-details2 .single-pro-details h4{
     padding: 40px 0 0 0;
+    font-size: 46px;
 
 }
 .small-image-group{
@@ -1105,20 +1106,64 @@ footer .copyright{
     background-color: #d60000;
     font-weight: 900;
   }
+  #pay{
+    padding-top: 10px;
+  }
+  #loca {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; 
+  }
+
+  .pricebar {
+    overflow: hidden;
+    background-color: #000;
+    position:fixed; /* Set the navbar to fixed position */
+    bottom: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    display: none;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 40px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-top: 1px solid gray;
+    z-index: 1000;
+  }
+  .pricebar button{
+    color: white;
+    background-color: red;
+    border-radius: 1rem;
+    width: 350px;
+    height: 75px;
+    font-size: 20px;
+    font-weight: 900;
+  }
 @media screen and (orientation: portrait){
     /* From Uiverse.io by Yaya12085 */ 
     .radio-inputs {
         position: relative;
         display: flex;
         flex-wrap: wrap;
-        border-radius: 0.5rem;
+        border-radius: 0.7rem;
         background-color: rgb(28, 28, 28);
         box-sizing: border-box;
         box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
         padding: 0.25rem;
-        width: 70%;
-        font-size: 14px;
+        width: 100%;
+        font-size: 16px;
     }
+    .radio-inputs .radio .name {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.7rem;
+        border: none;
+        padding: 1rem 0;
+        color: rgba(51, 65, 85, 1);
+        transition: all .15s ease-in-out;
+      }
     #navbar{
         display: flex;
         flex-direction:column;
@@ -1301,34 +1346,11 @@ footer .copyright{
     .section-p1 {
         padding:40px 20px;
     }
+    .pricebar{
+        display: flex;
+    }
+    #pay{
+        display: none;
+    }
 }
 
-  #pay{
-    padding-top: 10px;
-  }
-  #loca {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap; 
-  }
-
-  .pricebar {
-    overflow: hidden;
-    background-color: #000;
-    position:fixed; /* Set the navbar to fixed position */
-    bottom: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 40px;
-    padding-top: 20px;
-    border-top: 1px solid gray;
-    z-index: 1000;
-  }
-  .pricebar button{
-    color: white;
-    background-color: red;
-    width: 200px;
-  }
