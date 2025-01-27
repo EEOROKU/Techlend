@@ -17,9 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $time = $_POST['time'];
     $location = $_POST['location'];
+    $software = $_POST['software'];
 
-    $sql = "INSERT INTO pickup (name, email, time, location) VALUES ('$name', '$email', '$time', '$location')";
-
+    $sql = "INSERT INTO pickup (name, email, time, location, software) VALUES ('$name', '$email', '$time', '$location','$software')";
+    
     $url = "https://lend.deets.technology/";
     $font = "https://use.fontawesome.com/releases/v5.15.4/css/all.css";
     if ($conn->query($sql) === TRUE) {

@@ -15,8 +15,9 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $number = $_POST['number'];
-
+    $number = $_POST['w_number'];
+    var_dump($number);
+    print_r($number);
     $sql = "INSERT INTO Waitlist (name, email, number) VALUES ('$name', '$email', '$number')";
 
     $url = "https://lend.deets.technology/";
@@ -36,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                text-align: center;
             }
             .center-content {
                 text-align: center;
