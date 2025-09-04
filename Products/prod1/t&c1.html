@@ -10,7 +10,11 @@
         <style>
             /* From Uiverse.io by SelfMadeSystem */ 
             .container {
-            cursor: pointer;
+                display:list-item;
+                justify-content: center; /* Centers horizontally */
+                align-items: center;     /* Centers vertically */
+                cursor: pointer;
+                padding-right: 46px;
             }
 
             .container input {
@@ -104,6 +108,43 @@
             animation: checkAnim 0.2s forwards;
             }
 
+            
+            @media screen and (orientation: portrait){
+                h4 {
+                    font-size: 15px;
+                    color: white;
+                }
+                .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 35px; /* Increase the height */
+                width: 35px;  /* Increase the width */
+                background-color: #eee;
+                border-radius: 4px;
+                transition: background-color 0.3s;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                }
+
+                .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+                left: 12px;   /* Adjust the left position */
+                top: 7px;     /* Adjust the top position */
+                width: 8px;   /* Increase the width */
+                height: 16px;  /* Increase the height */
+                border: solid white;
+                border-width: 0 4px 4px 0; /* Increase border width */
+                transform: rotate(45deg);
+                }
+                .container svg {
+                    overflow: visible;
+                    height: 3em; /* Increase the height */
+                    width: 3em;  /* Increase the width */
+                }
+            }
+
         </style>
     </head>
     <body>
@@ -118,23 +159,37 @@
             <p>This covers any physical damage that occurs to the requested device</p>
             <!-- From Uiverse.io by DaniloMGutavo --> 
             <label class="checkbox-container">
-                <input class="custom-checkbox" type="checkbox">
+                <input class="custom-checkbox" type="checkbox" id="protectionCheckbox">
                 <span class="checkmark"></span>
             </label>
 
-            
-                
             <h4>Please accept the terms and conditions below</h4>
-            /* From Uiverse.io by SelfMadeSystem */ 
+            <!-- From Uiverse.io by SelfMadeSystem --> 
             <label class="container">
                 <p>Yes, I agree to the <a href="../../Terms&services.html">Terms of service.</a></p>
+                <input  type="checkbox" id="myCheckbox">
+                <svg viewBox="0 0 64 64" height="2em" width="2em"></svg>
             <input type="checkbox" id="myCheckbox">
             <script>
-                document.getElementById('myCheckbox').addEventListener('change', function() {
-                    if (this.checked) {
+                const protectionCheckbox = document.getElementById('protectionCheckbox');
+                const termsCheckbox = document.getElementById('myCheckbox');
+
+                function handleRedirect() {
+                    if (protectionCheckbox.checked && termsCheckbox.checked) {
                         setTimeout(function() {
-                            window.location.href = 'https://buy.stripe.com/dR69C959CcTh5Ne6oo'; // Replace with your desired URL
-                        }, 1000); // 1000 milliseconds = 1 second
+                            window.location.href = 'https://buy.stripe.com/aFadR88dXdEu3Ou30laZi0B';
+                        }, 1000);
+                    } else if (termsCheckbox.checked) {
+                        setTimeout(function() {
+                            window.location.href = 'https://buy.stripe.com/dR69C959CcTh5Ne6oo';
+                        }, 1000);
+                    }
+                }
+
+                termsCheckbox.addEventListener('change', handleRedirect);
+                protectionCheckbox.addEventListener('change', function() {
+                    if (termsCheckbox.checked) {
+                        handleRedirect();
                     }
                 });
             </script>
