@@ -43,17 +43,23 @@
 
              /* From Uiverse.io by DaniloMGutavo */ 
             .checkbox-container {
-            display: inline-block;
-            position: relative;
-            padding-left: 35px;
-            margin-bottom: 12px;
-            cursor: pointer;
-            font-size: 16px;
-            user-select: none;
+                display: flex;
+                justify-content: center; 
+                align-items: center ; /* This property centers items vertically */
+                position: relative;
+                gap: 10px;
+                padding-bottom: 10px;
+                margin-bottom: 12px;
+                cursor: pointer;
+                font-size: 16px;
+                user-select: none;
+            }
+
+            .checkbox-container p {
+                margin: 0;
             }
 
             .custom-checkbox {
-            position: absolute;
             opacity: 0;
             cursor: pointer;
             height: 0;
@@ -61,9 +67,6 @@
             }
 
             .checkmark {
-            position: absolute;
-            top: 0;
-            left: 0;
             height: 25px;
             width: 25px;
             background-color: #eee;
@@ -74,7 +77,7 @@
 
             .checkmark:after {
             content: "";
-            position: absolute;
+            position:relative;
             display: none;
             left: 9px;
             top: 5px;
@@ -114,34 +117,17 @@
                     font-size: 15px;
                     color: white;
                 }
-                .checkmark {
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 35px; /* Increase the height */
-                width: 35px;  /* Increase the width */
-                background-color: #eee;
-                border-radius: 4px;
-                transition: background-color 0.3s;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-                }
-
-                .checkmark:after {
-                content: "";
-                position: absolute;
-                display: none;
-                left: 12px;   /* Adjust the left position */
-                top: 7px;     /* Adjust the top position */
-                width: 8px;   /* Increase the width */
-                height: 16px;  /* Increase the height */
-                border: solid white;
-                border-width: 0 4px 4px 0; /* Increase border width */
-                transform: rotate(45deg);
-                }
                 .container svg {
                     overflow: visible;
                     height: 3em; /* Increase the height */
                     width: 3em;  /* Increase the width */
+                }
+                .checkbox-container {
+                    gap: 0px;
+                }
+                #about-started p {
+                        padding-left: 10px;
+                        font-size: 20px;
                 }
             }
 
@@ -155,13 +141,17 @@
                 You have chosen to rent the Touch screen Laptop,
                 Dell Inspiron 15 3000 for $15 for a day
             </h4>
+            <section id="about-index" class="section-p1"> 
+                <div id="abi"> 
             <h4 style="padding-bottom: 10px;"> Would you like to add protection to your plan for $5 ?</h4>
-            <p>This covers any physical damage that occurs to the requested device</p>
-            <!-- From Uiverse.io by DaniloMGutavo --> 
             <label class="checkbox-container">
                 <input class="custom-checkbox" type="checkbox" id="protectionCheckbox">
                 <span class="checkmark"></span>
+                <p>This covers any physical damage that occurs to the requested device</p>
+            <!-- From Uiverse.io by DaniloMGutavo --> 
             </label>
+            </div> 
+            </section>
 
             <h4>Please accept the terms and conditions below</h4>
             <!-- From Uiverse.io by SelfMadeSystem --> 
