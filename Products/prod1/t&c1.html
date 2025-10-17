@@ -114,20 +114,17 @@
             
             @media screen and (orientation: portrait){
                 h4 {
-                    font-size: 15px;
                     color: white;
                 }
                 .container svg {
                     overflow: visible;
-                    height: 3em; /* Increase the height */
-                    width: 3em;  /* Increase the width */
                 }
                 .checkbox-container {
                     gap: 0px;
                 }
-                #about-started p {
+                #about-started label p {
                         padding-left: 10px;
-                        font-size: 20px;
+                        font-size: 10px;
                 }
             }
 
@@ -141,51 +138,49 @@
                 You have chosen to rent the Touch screen Laptop,
                 Dell Inspiron 15 3000 for $15 for a day
             </h4>
-            <section id="about-index" class="section-p1"> 
-                <div id="abi"> 
-            <h4 style="padding-bottom: 10px;"> Would you like to add protection to your plan for $5 ?</h4>
-            <label class="checkbox-container">
-                <input class="custom-checkbox" type="checkbox" id="protectionCheckbox">
-                <span class="checkmark"></span>
-                <p>This covers any physical damage that occurs to the requested device</p>
-            <!-- From Uiverse.io by DaniloMGutavo --> 
-            </label>
+            <section id="about-index" class="prodd"> 
+                <div class="prod"> 
+                <h3> Would you like to add protection to your plan for $5 ?</h3>
+                <label class="checkbox-container">
+                    <input class="custom-checkbox" type="checkbox" id="protectionCheckbox">
+                    <span class="checkmark"></span>
+                    <p>This covers any physical damage that occurs to the requested device</p>
+                </label>
             </div> 
             </section>
 
             <h4>Please accept the terms and conditions below</h4>
-            <!-- From Uiverse.io by SelfMadeSystem --> 
             <label class="container">
                 <p>Yes, I agree to the <a href="../../Terms&services.html">Terms of service.</a></p>
                 <input  type="checkbox" id="myCheckbox">
                 <svg viewBox="0 0 64 64" height="2em" width="2em"></svg>
-            <input type="checkbox" id="myCheckbox">
-            <script>
-                const protectionCheckbox = document.getElementById('protectionCheckbox');
-                const termsCheckbox = document.getElementById('myCheckbox');
+                <input type="checkbox" id="myCheckbox">
+                <script>
+                    const protectionCheckbox = document.getElementById('protectionCheckbox');
+                    const termsCheckbox = document.getElementById('myCheckbox');
 
-                function handleRedirect() {
-                    if (protectionCheckbox.checked && termsCheckbox.checked) {
-                        setTimeout(function() {
-                            window.location.href = 'https://buy.stripe.com/aFadR88dXdEu3Ou30laZi0B';
-                        }, 1000);
-                    } else if (termsCheckbox.checked) {
-                        setTimeout(function() {
-                            window.location.href = 'https://buy.stripe.com/dR69C959CcTh5Ne6oo';
-                        }, 1000);
+                    function handleRedirect() {
+                        if (protectionCheckbox.checked && termsCheckbox.checked) {
+                            setTimeout(function() {
+                                window.location.href = 'https://buy.stripe.com/aFadR88dXdEu3Ou30laZi0B';
+                            }, 1000);
+                        } else if (termsCheckbox.checked) {
+                            setTimeout(function() {
+                                window.location.href = 'https://buy.stripe.com/dR69C959CcTh5Ne6oo';
+                            }, 1000);
+                        }
                     }
-                }
 
-                termsCheckbox.addEventListener('change', handleRedirect);
-                protectionCheckbox.addEventListener('change', function() {
-                    if (termsCheckbox.checked) {
-                        handleRedirect();
-                    }
-                });
-            </script>
-            <svg viewBox="0 0 64 64" height="2em" width="2em">
-                <path d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16" pathLength="575.0541381835938" class="path"></path>
-            </svg>
+                    termsCheckbox.addEventListener('change', handleRedirect);
+                    protectionCheckbox.addEventListener('change', function() {
+                        if (termsCheckbox.checked) {
+                            handleRedirect();
+                        }
+                    });
+                </script>
+                <svg viewBox="0 0 64 64" height="2em" width="2em">
+                    <path d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16" pathLength="575.0541381835938" class="path"></path>
+                </svg>
             </label>
         </section>
     </body>
