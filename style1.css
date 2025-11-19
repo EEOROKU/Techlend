@@ -437,6 +437,7 @@ body {
     display: flex;
     align-items: center;
 }
+
 .price p{
     padding-top: 10px;
 }
@@ -1292,6 +1293,10 @@ footer .copyright{
     font-weight: 900;
   }
 @media screen and (orientation: portrait){
+    .star .custom-icon {
+    font-size: 48px; /* Can use px, em, rem, % */
+    color: tomato;   /* You can change color like text too */
+}
     #feature .fe-box {
     width: 180px;
     text-align: center;
@@ -1468,14 +1473,23 @@ footer .copyright{
     #pro-details2 {
         display: flex;
     }
+    #product1 .pro .des i{
+        font-size: 25px; 
+    }
     #product1 .pro .des span{
         color: #aaaaad;
-        font-size: 13px;
+        font-size: 30px;
     }
     #product1 .pro .des p{
         color: #a8a8a9;
-        font-size: 13px;
+        font-size: 25px;
         padding-bottom: 0%;
+    }
+    #product1 .pro .des h5{
+        font-size: 30px;
+    }
+    #product1 .pro .des h4{
+        font-size: 30px;
     }
     .price{
         display: block;
