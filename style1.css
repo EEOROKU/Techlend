@@ -1385,9 +1385,18 @@ footer .copyright{
 }
 #about-itc .prod p{
     font-size: 18px;
+}     
+.instagram-media {
+    width: 600px;
+    height: 700px;      /* Adjust height here */
+    margin: auto;
 }
 @media screen and (orientation: portrait){
-
+     .instagram-media {
+                        width: 95%;
+                        max-width: 95%;
+                        height: 1000px !important;
+                    }
 
     .star .custom-icon {
     font-size: 48px; /* Can use px, em, rem, % */

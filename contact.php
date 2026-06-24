@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body = "Name: $name\nEmail: $email\nMessage:\n$message";
 
     if (mail($to, $subject, $body)) {
-        echo "Email sent successfully.";
+        echo "Email sent successfully. We will get back to you shortly. Thank you! </a href='index.html'>Return to Home</a>";
     } else {
         echo "Email failed to send.";
     }
