@@ -354,5 +354,155 @@
                 <p><a href="https://deets.technology/">DEETS</a></p>
             </div>
         </footer>
+        <div id="emailPopup" class="popup-overlay">
+            <div class="popup-content">
+                <button class="close-btn" onclick="closePopup()">&times;</button>
+                
+                <h2>Unlock 15% Off!</h2>
+                <p>Sign up for our newsletter and get a discount code sent straight to your inbox.</p>
+                
+                <form id="popupForm" onsubmit="handleFormSubmit(event)">
+                <input type="email" id="emailInput" placeholder="Enter your email address" required>
+                <button type="submit" class="submit-btn">Get My Discount</button>
+                </form>
+                
+                <p class="fine-print">We promise not to spam you. Unsubscribe at any time.</p>
+            </div>
+            <style>
+                /* Pop-up Overlay - hidden by default */
+.popup-overlay {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dimmed background */
+  z-index: 1000; /* Ensures it sits on top of everything else */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Pop-up Box */
+.popup-content {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close Button (X) */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+/* Typography & Inputs */
+.popup-content h2 {
+  margin-top: 0;
+  font-family: sans-serif;
+  color: #222;
+}
+
+.popup-content p {
+  font-family: sans-serif;
+  color: #666;
+  line-height: 1.5;
+}
+
+#emailInput {
+  width: 100%;
+  padding: 12px;
+  margin: 20px 0 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff4757; /* Eye-catching discount color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #e84118;
+}
+
+.fine-print {
+  font-size: 12px;
+  color: #999 !important;
+  margin-top: 15px;
+}
+
+/* Simple animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+            </style>
+            <script>
+                // 1. Show the pop-up 3 seconds after the page loads
+                window.addEventListener('DOMContentLoaded', () => {
+                setTimeout(() => {
+                    // Optional: Check localStorage so it doesn't annoy users who already closed/submitted it
+                    if (!localStorage.getItem('popupDismissed')) {
+                    document.getElementById('emailPopup').style.display = 'flex';
+                    }
+                }, 3000); // 3000 milliseconds = 3 seconds
+                });
+
+                // 2. Function to close the pop-up
+                function closePopup() {
+                document.getElementById('emailPopup').style.display = 'none';
+                localStorage.setItem('popupDismissed', 'true'); // Remember dismissal for this session/visit
+                }
+
+                // 3. Handle the form submission
+                function handleFormSubmit(event) {
+                event.preventDefault(); // Stop page from reloading
+                
+                const email = document.getElementById('emailInput').value;
+                
+                // LOGIC: Send 'email' to your server, Mailchimp, Klaviyo, etc. via fetch/API here.
+                console.log("Email captured:", email);
+                
+                // Show a success message to the user
+                const popupContent = document.querySelector('.popup-content');
+                popupContent.innerHTML = `
+                    <button class="close-btn" onclick="closePopup()">&times;</button>
+                    <h2>Thank You! 🎉</h2>
+                    <p>Your 15% off code is: <strong>WELCOME15</strong></p>
+                    <p>We've also emailed it to you.</p>
+                `;
+                
+                localStorage.setItem('popupDismissed', 'true'); // Don't show again
+                }
+            </script>
+        </div>
     </body>
 </html>
